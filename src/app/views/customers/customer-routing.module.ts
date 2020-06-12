@@ -1,0 +1,35 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+
+import { CustomersComponent } from './customers.component';
+const routes: Routes = [
+    {
+        path: '',
+        data: {
+            title: 'add'
+        },
+        children: [
+
+            {
+                path: '',
+                redirectTo: 'add'
+            },
+            {
+
+
+                path: 'add',
+                component: CustomersComponent,
+                data: {
+                    title: 'AddCustomer'
+                }
+            },
+        ]
+    }
+];
+
+@NgModule({
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
+})
+export class CustomersRoutingModule { }

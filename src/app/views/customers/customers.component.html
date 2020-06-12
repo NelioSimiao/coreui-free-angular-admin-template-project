@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="container">
+    <form autocomplete="off" [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="inputName">Nome Completo</label>
+          <input type="text" class="form-control" id="inputName" formControlName="inputName"/>
+          <div *ngIf="submitted && form.inputName.errors" class="invalid-feedback d-block">
+              <div *ngIf="form.inputName.errors.required">Informe o nome do Cliente</div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="inputIdentif">Número BI</label>
+          <input type="text" class="form-control" id="inputIdentif" formControlName="inputIdentif"/>
+          <div *ngIf="submitted && form.inputIdentif.errors" class="invalid-feedback d-block">
+              <div *ngIf="form.inputIdentif.errors.required">Informe o número de BI</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="inputEmail">Email</label>
+          <input type="email" class="form-control" id="inputEmail" formControlName="inputEmail" />
+          <div *ngIf="submitted && form.inputEmail.errors" class="invalid-feedback d-block">
+              <div *ngIf="form.inputEmail.errors.required">Informe o Email Cliente</div>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputContacto">Contacto</label>
+          <input type="number" class="form-control" id="inputContacto" formControlName="inputContacto" />
+          <div *ngIf="submitted && form.inputContacto.errors" class="invalid-feedback d-block">
+              <div *ngIf="form.inputContacto.errors.required">Informe o contacto Cliente
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-row">
+          <div class="form-group col-md-7">
+            <label for="inputEmpregadora">Instituição Empregadora</label>
+            <input type="text" class="form-control" id="inputEmpregadora" formControlName="inputEmpregadora" />
+            <div *ngIf="submitted && form.inputEmpregadora.errors" class="invalid-feedback d-block">
+                <div *ngIf="form.inputEmpregadora.errors.required">Informe a Instituição Empregadora</div>
+            </div>
+          </div>
+          <div class="form-group col-md-5">
+            <label for="inputCodigo">Código</label>
+            <input type="text" class="form-control" id="inputCodigo" formControlName="inputCodigo" />
+            <div *ngIf="submitted && form.inputCodigo.errors" class="invalid-feedback d-block">
+                <div *ngIf="form.inputCodigo.errors.required">Informe o Código do Cliente</div>
+            </div>
+          </div>
+        </div>
+      <div class="text-center">
+       
+        <button type="submit" class="btn btn-primary">Cadastrar</button> |
+        <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
