@@ -49,7 +49,7 @@ export const routes: Routes = [
     data: {
       title: 'Home'
     },
-    
+
     children: [
       {
         path: 'base',
@@ -59,6 +59,12 @@ export const routes: Routes = [
       {
         path: 'customers',
         loadChildren: () => import('./views/customers/customers.module').then(m => m.CustomersModule)
+      },
+
+
+      {
+        path: 'customers/create',
+        loadChildren: () => import('./views/customers/create-customer/create-customer.module').then(m => m.CreateCustomersModule)
       },
       {
         path: 'buttons',

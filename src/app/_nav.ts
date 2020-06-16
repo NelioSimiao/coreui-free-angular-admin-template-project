@@ -5,10 +5,10 @@ export const navItems: INavData[] = [
     name: 'Dashboard',
     url: '/dashboard',
     icon: 'icon-speedometer',
-    badge: {
+   /* badge: {
       variant: 'info',
       text: 'New'
-    }
+    }*/
   },
  /*   {
     title: true,
@@ -30,9 +30,9 @@ export const navItems: INavData[] = [
   },*/
   {
     name: 'Clientes',
-    url: '/customer',
-    icon: 'user',
-    children: [
+    url: '/customers',
+    icon: 'icon-user',
+   /*   children: [
       {
         name: 'Cadastro',
         url: '/customers/add',
@@ -48,7 +48,7 @@ export const navItems: INavData[] = [
         url: '/base/collapses',
         icon: 'icon-puzzle'
       },
-   /*     {
+      {
         name: 'Forms',
         url: '/base/forms',
         icon: 'icon-puzzle'
@@ -94,7 +94,7 @@ export const navItems: INavData[] = [
         url: '/base/tooltips',
         icon: 'icon-puzzle'
       }*/
-    ]
+  //  ]
   },
  /* {
     name: 'Buttons',
