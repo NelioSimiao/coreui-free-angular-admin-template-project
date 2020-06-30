@@ -14,9 +14,9 @@
                     </div>
                     <input type="text" class="form-control" formControlName="email" placeholder="Email">
 
-                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback d-block" >
-                        <div *ngIf="f.email.errors.required">Informe o email</div>
-                        <div *ngIf="f.email.errors.email">O email não é valido</div> 
+                    <div *ngIf="submitted && form.email.errors" class="invalid-feedback d-block" >
+                        <div *ngIf="form.email.errors.required">Informe o email</div>
+                        <div *ngIf="form.email.errors.email">O email não é valido</div>
                     </div>
                   </div>
 
@@ -26,8 +26,8 @@
                     </div>
                     <input type="password" class="form-control" formControlName="password" placeholder="Password">
 
-                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback d-block" >
-                        <div *ngIf="f.password.errors.required">Informe a senha</div>
+                    <div *ngIf="submitted && form.password.errors" class="invalid-feedback d-block" >
+                        <div *ngIf="form.password.errors.required">Informe a senha</div>
                     </div>
                   </div>
 

@@ -62,10 +62,10 @@ export const routes: Routes = [
       },
 
 
-      {
+    /*  {
         path: 'customers/create',
         loadChildren: () => import('./views/customers/create-customer/create-customer.module').then(m => m.CreateCustomersModule)
-      },
+      },*/
       {
         path: 'buttons',
         loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)

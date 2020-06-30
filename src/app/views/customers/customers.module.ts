@@ -13,10 +13,11 @@ import { CreateCustomerComponent } from './create-customer/create-customer.compo
     CustomersRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    TableModule
+    TableModule,
   ],
   declarations: [
     CustomersComponent,
+    CreateCustomerComponent
   ]
 })
 export class CustomersModule { }

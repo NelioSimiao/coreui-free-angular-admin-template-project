@@ -1,3 +1,4 @@
+import { CreateCustomerComponent } from './create-customer/create-customer.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -10,7 +11,10 @@ const routes: Routes = [
         data: {
             title: 'customers'
         }
-    }
+    },
+    { path: 'create', component: CreateCustomerComponent, data: { title: 'createCustomers' }},
+    { path: 'edit/:id', component: CreateCustomerComponent, data: { title: 'editCustomers' }},
+
 ];
 
 @NgModule({

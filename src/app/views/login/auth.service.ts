@@ -1,30 +1,35 @@
+import { User } from './../models/user';
 
 import { Injectable } from '@angular/core';
-import { User } from '../user';
-import { BehaviorSubject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Customer } from '../models/customer';
+const AUTH_API = 'http://localhost:8080/api/auth/';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-    user = new BehaviorSubject<User>(null);
+  user = new BehaviorSubject<Customer>(null);
 
-    constructor() { }
+  constructor(private http: HttpClient) { }
 
-    public login(user: User) {
-        localStorage.setItem('ACCESS_TOKEN', "access_token");
+  public login(customer: Customer): Observable<any> {
+    return this.http.post(AUTH_API + 'signin', {
+      username: customer.username,
+      password: customer.password
+    }, httpOptions);
+  }
+  public logout(user: User) {
+    return localStorage.getItem('ACCESS_TOKEN') !== null;
 
-        this.user.next(user);
+  }
 
-    }
-
-    public logout(user: User) {
-        return localStorage.getItem('ACCESS_TOKEN') !== null;
-
-    }
-
-    public isLoggedIn() {
-        localStorage.removeItem('ACCESS_TOKEN');
-    }
+  public isLoggedIn() {
+    localStorage.removeItem('ACCESS_TOKEN');
+  }
 }

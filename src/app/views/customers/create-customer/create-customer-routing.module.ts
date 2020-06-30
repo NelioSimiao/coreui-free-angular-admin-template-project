@@ -4,17 +4,14 @@ import { CreateCustomerComponent } from './create-customer.component';
 
 
 const routes: Routes = [
-    {
-        path: '',
-        component: CreateCustomerComponent,
-        data: {
-            title: 'createCustomers'
-        }
-    }
+  { path: 'create', component: CreateCustomerComponent, data: { title: 'createCustomers' }},
+  { path: 'update', component: CreateCustomerComponent, data: { title: 'createCustomers' }}
+
+
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class CreateCustomersRoutingModule { }
