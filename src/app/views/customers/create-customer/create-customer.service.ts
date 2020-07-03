@@ -9,11 +9,11 @@ export class CreateCustomerService {
   // select customer at datable
   customerSelected = new EventEmitter<Customer>();
 
-  constructor(private http: HttpClient) { }
-  AUTH_API = 'http://localhost:8080/api/auth/';
-  httpOptions = {
+  //constructor(private http: HttpClient) { }
+ // AUTH_API = 'http://localhost:8080/api/auth/';
+  /*httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
+  };*/
 
 
 
@@ -22,20 +22,23 @@ export class CreateCustomerService {
     {
       'id': 1,
       'name': "Nelio Simiao",
-      'documentCode': "nelio",
+      'documentCode': "100000BI",
       'email': "nelio@Gmail.com",
       'contact': "848407055",
       'employer': "cedsif",
-      'code': "g Q3 ersia"
+      'username': "g Q3 ersia",
+      'password':"ddddd"
     },
+
     {
       'id': 2,
-      'name': "Samuel Palice",
-      'documentCode': "nelio",
-      'email': "nelio@Gmail.com",
-      'contact': "848407055",
-      'employer': "cedsif",
-      'code': "Filipinas"
+      'name': "Ofelia Artur Mambo",
+      'documentCode': "1000000MNBI",
+      'email': "Teste@Gmail.com",
+      'contact': "5754822",
+      'employer': "BM",
+      'username': "saco",
+      'password':"dddd"
     }
   ];
 
@@ -50,10 +53,7 @@ export class CreateCustomerService {
   addCustomers(customer: Customer) {
     this.customers.push(customer);
     this.customesChanged.next(this.getCustomers());
-    return this.http.post(this.AUTH_API + 'signup', {
-      username: customer.username,
-
-    }, this.httpOptions);
+    
   }
 
   deleteCustomer(id: number) {

@@ -7,5 +7,4 @@ export interface Customer {
   employer: string;
   username: string;
   password: string;
-
 }

@@ -62,7 +62,7 @@ export class CreateCustomerComponent implements OnInit {
     let email = '';
     let contact = '';
     let employer = '';
-    let code = '';
+    let username = '';
 
     if (id) {
       this.editMode = true;
@@ -71,7 +71,7 @@ export class CreateCustomerComponent implements OnInit {
       email = customer.email;
       contact = customer.contact;
       employer = customer.employer;
-      code = customer.code;
+      username = customer.username;
     }
 
     this.createCustomerForm = this.formBuilder.group({
@@ -80,7 +80,7 @@ export class CreateCustomerComponent implements OnInit {
       email: [email, Validators.required],
       contact: [contact, [Validators.required, Validators.pattern(/^\d+\.\d{2}$/)]],
       employer: [employer, Validators.required],
-      code: [code, Validators.required],
+      username: [username, Validators.required],
 
     });
   }

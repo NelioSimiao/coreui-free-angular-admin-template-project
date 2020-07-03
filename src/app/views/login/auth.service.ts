@@ -1,4 +1,3 @@
-import { User } from './../models/user';
 
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -16,15 +15,15 @@ export class AuthService {
 
   user = new BehaviorSubject<Customer>(null);
 
-  constructor(private http: HttpClient) { }
+ //constructor(private http: HttpClient) { }
 
-  public login(customer: Customer): Observable<any> {
+ /* public login(customer: Customer): Observable<any> {
     return this.http.post(AUTH_API + 'signin', {
       username: customer.username,
       password: customer.password
     }, httpOptions);
-  }
-  public logout(user: User) {
+  }*/
+  public logout(user: any) {
     return localStorage.getItem('ACCESS_TOKEN') !== null;
 
   }

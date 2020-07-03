@@ -46,7 +46,7 @@ export class CustomersComponent implements OnInit {
   private getFields() {
     return [
       { field: 'name', header: 'Nome' },
-      { field: 'code', header: 'Codigo' },
+      { field: 'username', header: 'Codigo' },
       { field: 'email', header: 'Email' },
       { field: 'contact', header: 'Contacto' },
       { field: 'employer', header: 'Instituicao' }
