@@ -4,16 +4,17 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 import { CustomersComponent } from './customers.component';
+import { AuthGuard } from '../login/auth.guard';
 const routes: Routes = [
     {
         path: '',
-        component: CustomersComponent,
+        component: CustomersComponent,  canActivate: [AuthGuard],
         data: {
             title: 'customers'
         }
     },
-    { path: 'create', component: CreateCustomerComponent, data: { title: 'createCustomers' }},
-    { path: 'edit/:id', component: CreateCustomerComponent, data: { title: 'editCustomers' }},
+    { path: 'create', component: CreateCustomerComponent, canActivate: [AuthGuard], data: { title: 'createCustomers' }},
+    { path: 'edit/:id', component: CreateCustomerComponent, canActivate: [AuthGuard], data: { title: 'editCustomers' }},
 
 ];
 

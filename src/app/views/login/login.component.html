@@ -8,6 +8,14 @@
               <div class="card-body">
                 <form autocomplete="off" [formGroup]= "loginForm" (ngSubmit)="login()">
                   <h1 class="text-muted" >Login</h1>
+
+                  <div class="alert alert-danger alert-dismissible" *ngIf="error">
+                      <P>Ocorreu o erro abaixo:</P>
+                       <P>{{errorMessage}}</P>
+                    </div> 
+
+                  <div *ngIf="error" class="">Informe o email</div>
+
                   <div class="input-group mb-4">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="icon-user"></i></span>
@@ -16,7 +24,9 @@
 
                     <div *ngIf="submitted && form.email.errors" class="invalid-feedback d-block" >
                         <div *ngIf="form.email.errors.required">Informe o email</div>
+                       <!--  
                         <div *ngIf="form.email.errors.email">O email não é valido</div>
+                       --> 
                     </div>
                   </div>
 
